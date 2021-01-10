@@ -1,0 +1,10 @@
+D:\Entwicklung\C#\csv-merger\csv-merger\obj\Debug\csv-merger.csprojAssemblyReference.cache
+D:\Entwicklung\C#\csv-merger\csv-merger\obj\Debug\csv_merger.Form1.resources
+D:\Entwicklung\C#\csv-merger\csv-merger\obj\Debug\csv_merger.Properties.Resources.resources
+D:\Entwicklung\C#\csv-merger\csv-merger\obj\Debug\csv-merger.csproj.GenerateResource.cache
+D:\Entwicklung\C#\csv-merger\csv-merger\obj\Debug\csv-merger.csproj.CoreCompileInputs.cache
+D:\Entwicklung\C#\csv-merger\csv-merger\bin\Debug\csv-merger.exe.config
+D:\Entwicklung\C#\csv-merger\csv-merger\bin\Debug\csv-merger.exe
+D:\Entwicklung\C#\csv-merger\csv-merger\bin\Debug\csv-merger.pdb
+D:\Entwicklung\C#\csv-merger\csv-merger\obj\Debug\csv-merger.exe
+D:\Entwicklung\C#\csv-merger\csv-merger\obj\Debug\csv-merger.pdb
