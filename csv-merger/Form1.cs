@@ -26,6 +26,7 @@ namespace csv_merger
             string pathOut = textBox2.Text;
             string[] files = Directory.GetFiles(path, "*.csv", SearchOption.AllDirectories);
             int count = 0;
+            int longestLine = 0;
             Encoding utf8WithoutBom = new UTF8Encoding(true);
             path = path +"\\";
 
@@ -57,7 +58,63 @@ namespace csv_merger
                     count++;
 
                 }
+
+                
             }
+
+            var totalcols = 0;
+            var lines = File.ReadAllLines(pathOut);
+            foreach (var line in lines)
+            {
+                var lineCount = line.Split(';').Length;
+                if (lineCount > totalcols)
+                {
+                    totalcols = lineCount;
+                }
+            }
+
+            List<String> linesList = new List<String>();
+
+            using (StreamReader reader = new StreamReader(pathOut, Encoding.Default))
+            {
+                String line;
+
+                while ((line = reader.ReadLine()) != null)
+                {
+                    var lineCount = line.Split(';').Length;
+                    if (lineCount < totalcols)
+                    {
+                        String[] split = line.Split(';');
+
+                        int missingLinesCount = totalcols - lineCount;
+                        var missingLines = "";
+
+                        for (int ii = 0; ii < missingLinesCount; ii++)
+                        {
+                            missingLines = missingLines + ";";
+                        }
+
+
+                        split[split.Length - 3] = split[split.Length - 3] + missingLines;
+                        line = String.Join(";", split);
+
+                    }
+
+
+                    linesList.Add(line);
+                }
+            }
+
+            using (var writer = new StreamWriter(new FileStream(pathOut, FileMode.Open), utf8WithoutBom))
+            {
+               
+                foreach (String line in linesList)
+                    writer.WriteLine(line);
+            }
+
+            
+            
+            
         }
 
     }
